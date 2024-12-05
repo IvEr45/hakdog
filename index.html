@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Horizontal Scroll for Images</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .image-container {
+            display: flex;
+            overflow-x: auto; /* Enable horizontal scroll */
+            gap: 10px;
+            padding: 10px;
+            white-space: nowrap; /* Prevent images from wrapping */
+        }
+
+        .image-container img {
+            width: 300px;
+            height: auto;
+            border-radius: 8px;
+            object-fit: cover;
+        }
+    </style>
+</head>
+<body>
+
+<div class="image-container">
+    <img src="images/craft.jpg" alt="Image 1">
+    <img src="images/honey.jpg" alt="Image 2">
+    <img src="images/veg.jpg" alt="Image 3">
+    <img src="images/walis.jpg" alt="Image 4">
+    <img src="images/wine.jpg" alt="Image 5">
+</div>
+
+</body>
+</html>
