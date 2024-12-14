@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Horizontal Scroll for Images</title>
+    <title>Scrollable Media</title>
     <style>
         * {
             margin: 0;
@@ -15,31 +15,216 @@
             font-family: Arial, sans-serif;
         }
 
-        .image-container {
+        .media-container {
             display: flex;
             overflow-x: auto; /* Enable horizontal scroll */
             gap: 10px;
             padding: 10px;
-            white-space: nowrap; /* Prevent images from wrapping */
+            white-space: nowrap; /* Prevent wrapping */
         }
 
-        .image-container img {
+        .media-container img {
             width: 300px;
             height: auto;
             border-radius: 8px;
             object-fit: cover;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+        }
+
+        .media-container img:hover {
+            transform: scale(1.1); /* Slightly enlarge the image */
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3); /* Add a shadow */
+        }
+
+        .media-container video {
+            width: 300px;
+            height: auto;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        .media-container::-webkit-scrollbar {
+            height: 8px;
+        }
+
+        .media-container::-webkit-scrollbar-thumb {
+            background-color: #888;
+            border-radius: 4px;
+        }
+
+        .media-container::-webkit-scrollbar-thumb:hover {
+            background-color: #555;
         }
     </style>
 </head>
 <body>
 
-<div class="image-container">
-    <img src="images/craft.jpg" alt="Image 1">
-    <img src="images/honey.jpg" alt="Image 2">
-    <img src="images/veg.jpg" alt="Image 3">
-    <img src="images/walis.jpg" alt="Image 4">
-    <img src="images/wine.jpg" alt="Image 5">
-</div>
-
-</body>
-</html>
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Scrollable Media</title>
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+    
+            body {
+                font-family: Arial, sans-serif;
+                background-color: #f9f9f9;
+                color: #333;
+                line-height: 1.6;
+            }
+    
+            h2 {
+                margin: 20px;
+                text-align: center;
+                color: #444;
+            }
+    
+            .media-container {
+                display: flex;
+                overflow-x: auto;
+                gap: 15px;
+                padding: 15px 20px;
+                white-space: nowrap;
+                background: #fff;
+                border-radius: 10px;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            }
+    
+            .media-container img,
+            .media-container video {
+                width: 300px;
+                height: 200px;
+                border-radius: 8px;
+                object-fit: cover;
+                transition: transform 0.3s ease, box-shadow 0.3s ease;
+                cursor: pointer;
+            }
+    
+            .media-container img:hover,
+            .media-container video:hover {
+                transform: scale(1.1);
+                box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+            }
+    
+            .media-container::-webkit-scrollbar {
+                height: 10px;
+            }
+    
+            .media-container::-webkit-scrollbar-thumb {
+                background-color: #888;
+                border-radius: 5px;
+            }
+    
+            .media-container::-webkit-scrollbar-thumb:hover {
+                background-color: #555;
+            }
+    
+            a {
+                text-decoration: none;
+            }
+    
+            body > div {
+                margin-bottom: 30px;
+            }
+        </style>
+    </head>
+    <body>
+    
+        <div class="media-container">
+            <a href="images/525841b5-c2d7-4e22-9a56-afd2fe2d70d2.jpg" target="_blank">
+                <img src="images/525841b5-c2d7-4e22-9a56-afd2fe2d70d2.jpg" alt="Image 1">
+            </a>
+            <a href="images/c6e6d643-a720-48d0-aaa4-54b249107a8f.jpg" target="_blank">
+                <img src="images/c6e6d643-a720-48d0-aaa4-54b249107a8f.jpg" alt="Image 2">
+            </a>
+            <a href="images/8c32077a-908c-44c9-b8da-14ecdc54014e.jpg" target="_blank">
+                <img src="images/534f2f56-bba7-4671-a65a-4ac11b06499d.jpg" alt="Image 3">
+            </a>
+            <a href="images/f9f060e0-3d75-4a8b-87e3-2ea4453428b7.jpg" target="_blank">
+                <img src="images/f9f060e0-3d75-4a8b-87e3-2ea4453428b7.jpg" alt="Image 4">
+            </a>
+            <a href="images/534f2f56-bba7-4671-a65a-4ac11b06499d.jpg.jpg" target="_blank">
+                <img src="images/534f2f56-bba7-4671-a65a-4ac11b06499d.jpg" alt="Image 5">
+            </a>
+            <a href="images/8353c0b4-8d63-4400-a4f1-a35cb91b5958.jpg" target="_blank">
+                <img src="images/8353c0b4-8d63-4400-a4f1-a35cb91b5958.jpg" alt="Image 6">
+            </a>
+            <a href="images/7ba41587-afce-4d5b-954e-c8ab3fa92b4fjpg" target="_blank">
+                <img src="images/7ba41587-afce-4d5b-954e-c8ab3fa92b4f.jpg" alt="Image 7">
+            </a>
+            <a href="images/f2ca6c3d-d853-4539-8347-da14f2d406f9.jpg" target="_blank">
+                <img src="images/f2ca6c3d-d853-4539-8347-da14f2d406f9.jpg" alt="Image 8">
+            </a>
+            <a href="images/584d70c4-ba31-4259-8774-6de31a8b06a9jpg" target="_blank">
+                <img src="images/584d70c4-ba31-4259-8774-6de31a8b06a9.jpg" alt="Image 9">
+            </a>
+            <a href="images/52e30cbf-8338-472d-8713-5bbb2e57118c.jpg" target="_blank">
+                <img src="images/52e30cbf-8338-472d-8713-5bbb2e57118c.jpg" alt="Image 10">
+            </a>
+            <a href="images/1cc13b3a-f50f-44f7-89a1-1ac30553a1a3.jpg" target="_blank">
+                <img src="images/1cc13b3a-f50f-44f7-89a1-1ac30553a1a3.jpg" alt="Image 11">
+            </a>
+            <a href="images/c79b018e-083f-479c-ba5d-dfdb69fa533e.jpg" target="_blank">
+                <img src="images/c79b018e-083f-479c-ba5d-dfdb69fa533e.jpg" alt="Image 12">
+            </a>
+            <a href="images/0e1d53ac-72c5-40ad-b76b-939be6356809.jpg" target="_blank">
+                <img src="images/0e1d53ac-72c5-40ad-b76b-939be6356809.jpg" alt="Image 13">
+            </a>
+            <a href="images/6d141ccd-4604-442c-bbb4-4ea3d35aaf39jpg" target="_blank">
+                <img src="images/6d141ccd-4604-442c-bbb4-4ea3d35aaf39jpg" alt="Image 14">
+            </a>
+            <a href="images/e05c5faf-3cf4-4c39-841b-5c61e5aece40jpg" target="_blank">
+                <img src="images/e05c5faf-3cf4-4c39-841b-5c61e5aece40jpg" alt="Image 15">
+            </a>
+            <a href="images/f682e915-3940-49aa-8a88-4e7c1a8161ce.jpg" target="_blank">
+                <img src="images/f682e915-3940-49aa-8a88-4e7c1a8161ce.jpg" alt="Image 16">
+            </a>
+            <a href="images/583b656e-522e-4378-aa1e-37eabb76f9df.jpg" target="_blank">
+                <img src="images/583b656e-522e-4378-aa1e-37eabb76f9df.jpg" alt="Image 17">
+            </a>
+            <a href="images/6e5ba96e-e3ca-406a-ba0e-b66ac77cf0f0.jpg" target="_blank">
+                <img src="images/6e5ba96e-e3ca-406a-ba0e-b66ac77cf0f0.jpg" alt="Image 18">
+            </a>
+            <a href="images/8a4ce383-ae0f-4559-a309-00b98fae9f6a.jpg" target="_blank">
+                <img src="images/8a4ce383-ae0f-4559-a309-00b98fae9f6a.jpg" alt="Image 19">
+            </a>
+            
+        </div>
+        
+        <div class="media-container">
+            <video controls>
+                <source src="videos/2dd99f8f-4607-4b89-937a-197ba8e7440c.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <video controls>
+                <source src="videos/c54b1063-f19e-43e0-b9ed-0e38204f6056.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <video controls>
+                <source src="videos/934d5a48-d14d-4210-bf9f-421791a14a74.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <video controls>
+                <source src="videos/f50e75ae-1832-4ed7-aeee-5d4a0e1178e9.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <video controls>
+                <source src="videos/ac270150-5ba6-4582-8bad-dec1f84652a4.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <video controls>
+                <source src="videos/0043780b-bf7e-4dec-b3a1-d319734d22a8.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+        
+        </body>
+        </html>
+        
